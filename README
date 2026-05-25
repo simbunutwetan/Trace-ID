@@ -1,0 +1,47 @@
+Trace-ID: Layanan Desaku Tuntas
+Sistem Informasi Pelacakan Progres Dokumen Warga (Desa Bunutwetan)
+Trace-ID adalah aplikasi berbasis web (Web App) yang dirancang khusus untuk memodernisasi layanan administrasi di tingkat pemerintah desa. Aplikasi ini berfungsi sebagai sistem pelacakan (tracking) dokumen secara real-time, sehingga warga dapat memantau status berkas permohonan mereka (seperti KK, Akta Lahir, Akta Kematian, KIA, dll.) secara mandiri tanpa harus bolak-balik ke kantor desa.
+
+🚀 Fitur Utama
+Sistem Dua Sisi (Server & Client):
+
+Sisi Server (Admin): Tempat petugas desa menginput data ajuan warga, mencetak tanda terima, dan memperbarui status progres berkas secara real-time.
+
+Sisi Client (Warga): Antarmuka responsif dan ramah pengguna bagi warga untuk melacak dokumen cukup dengan memasukkan NIK.
+
+Validasi NIK Anti-Salah Input: Input NIK di sisi admin dilengkapi penyaring otomatis (hanya angka) dan pengunci tombol simpan jika panjang NIK belum tepat 16 digit.
+
+Cetak Kitir Tanda Terima Otomatis: Fitur cetak lembar tanda terima berkas (kitir) melebar yang dilengkapi dengan detail ajuan, daftar checklist berkas manual, serta QR Code otomatis yang terintegrasi ke link pelacakan publik.
+
+Pengaturan Fleksibel (Dynamic Settings): Nama desa, alamat, dan logo pada aplikasi dapat dikonfigurasi secara dinamis melalui basis data internal.
+
+🛠️ Teknologi yang Digunakan
+Backend & Database: Google Apps Script (GAS) & Google Sheets
+
+Frontend Sisi Admin: HTML5, CSS3, JavaScript (ES6), Bootstrap (Responsive Layout)
+
+Integrasi Publik: GitHub Pages (untuk deployment landing page pelacakan warga)
+
+API Pihak Ketiga: QR Code Generator API (untuk mencetak lembar tanda terima warga)
+
+⚙️ Struktur Parameter URL Web App
+Aplikasi ini menggunakan skrip tunggal (doGet) dengan pembagian halaman berbasis parameter URL:
+
+Halaman Publik/Warga (Client):
+
+Plaintext
+https://script.google.com/macros/s/AKfycbzASBbH_MbdNFcws62JU69WIuWC6Q1nV2WuoAnorVlAe7jd3elSlqpklNm6mSikGNlCbQ/exec
+(Membuka file Client.html secara default untuk pelacakan warga).
+
+Halaman Petugas/Server (Admin):
+
+Plaintext
+https://script.google.com/macros/s/AKfycbzASBbH_MbdNFcws62JU69WIuWC6Q1nV2WuoAnorVlAe7jd3elSlqpklNm6mSikGNlCbQ/exec?p=admin
+(Membuka file Server.html khusus untuk manajemen data internal).
+
+🧑‍💻 Pengembang
+Nama Aplikasi: Trace-ID (Layanan Desaku Tuntas)
+
+Instansi: Pemerintah Desa Bunutwetan, Kecamatan Pakis, Kabupaten Malang.
+
+Developer: Tri Indratno
