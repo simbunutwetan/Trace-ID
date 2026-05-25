@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimDAWA | Sistem Manajemen Data Warga</title> <style>
-        /* Menghilangkan scrollbar dan margin agar aplikasi tampil penuh */
-        body, html { 
-            margin: 0; 
-            padding: 0; 
-            height: 100%; 
-            width: 100%;
-            overflow: hidden; 
-            background-color: #ffffff;
-        }
-        /* Mengatur iframe agar memenuhi layar HP dan Laptop */
-        iframe { 
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%; 
-            height: 100%; 
-            border: none; 
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trace-ID | Layanan Desaku Tuntas</title>
+  <style>
+    /* Mengatur agar halaman bersih tanpa margin dan scrollbar ganda */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #f4f7fe;
+    }
+    
+    /* Bingkai utama untuk memuat web admin Google Script secara penuh */
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbxlIT3tpc_lca_uiDjR2r0_M8RqdEPeqoK3Lba2pXdstDDxDqsJj0-WqJwR0RkotSDF/exec?p=admin"></iframe>
+
+  <iframe src="https://script.google.com/macros/s/AKfycbzASBbH_MbdNFcws62JU69WIuWC6Q1nV2WuoAnorVlAe7jd3elSlqpklNm6mSikGNlCbQ/exec?p=admin" allowfullscreen></iframe>
+
 </body>
 </html>
