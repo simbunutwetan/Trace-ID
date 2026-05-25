@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trace-ID | Layanan Desaku Tuntas</title>
+  <title>Redirecting to Trace-ID Admin...</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&display=swap" rel="stylesheet">
   
   <style>
     body {
@@ -14,111 +13,38 @@
       background: #f4f7fe;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
     }
-    .card-search {
-      border: none;
+    .redirect-box {
+      text-align: center;
+      background: #fff;
+      padding: 40px;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
-    .btn-search {
-      border-radius: 30px;
-      padding: 10px 24px;
-      font-weight: 600;
-    }
-    .form-control-lg {
-      border-radius: 30px;
-      padding-left: 20px;
-      font-size: 1rem;
-    }
-    .brand-title {
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-    .footer-text {
-      font-size: 12px;
-      color: #7c8ba1;
-    }
   </style>
+  
+  <script>
+    // Fungsi ini akan langsung berjalan otomatis sebelum HTML selesai me-render penuh
+    window.location.href = "https://script.google.com/macros/s/AKfycbxlIT3tpc_lca_uiDjR2r0_M8RqdEPeqoK3Lba2pXdstDDxDqsJj0-WqJwR0RkotSDF/exec?p=admin";
+  </script>
 </head>
 <body>
 
-  <div class="container my-5">
+  <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-6 col-lg-5">
-        
-        <div class="text-center mb-4">
-          <div class="bg-primary text-white d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 60px; height: 60px;">
-            <i class="bi bi-search-heart fs-3"></i>
+      <div class="col-md-5">
+        <div class="redirect-box">
+          <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Loading...</span>
           </div>
-          <h2 class="brand-title text-primary m-0">TRACE-ID</h2>
-          <p class="text-muted small mt-1">Layanan Desaku Tuntas • Pemerintah Desa Bunutwetan</p>
+          <h5 class="fw-bold text-dark mb-1">Membuka Server Trace-ID</h5>
+          <p class="text-muted small m-0">Mohon tunggu, Anda sedang dialihkan ke halaman admin...</p>
         </div>
-
-        <div class="card card-search p-4 bg-white">
-          <h5 class="fw-bold mb-3 text-dark text-center">Pelacakan Berkas Warga</h5>
-          <p class="text-muted small text-center mb-4">Silakan masukkan 16 digit NIK Anda untuk memantau status progres dokumen secara real-time.</p>
-          
-          <form id="formLacak">
-            <div class="mb-3">
-              <label class="form-label small fw-bold text-secondary">Nomor Induk Kependudukan (NIK)</label>
-              <div class="input-group">
-                <span class="input-group-text bg-light border-end-0 text-muted" style="border-radius: 30px 0 0 30px;">
-                  <i class="bi bi-card-id"></i>
-                </span>
-                <input type="text" id="inputNIK" class="form-control form-control-lg border-start-0" maxlength="16" placeholder="Contoh: 350712XXXXXXXXXX" required>
-              </div>
-              <div id="errorMsg" class="text-danger small mt-2 d-none">
-                <i class="bi bi-exclamation-circle-fill"></i> NIK harus tepat 16 digit angka!
-              </div>
-            </div>
-            
-            <button type="submit" class="btn btn-primary btn-search w-100 mt-2 shadow-sm">
-              <i class="bi bi-cursor-fill me-1"></i> LACAK DOKUMEN
-            </button>
-          </form>
-        </div>
-
-        <div class="text-center mt-4">
-          <p class="footer-text m-0">© 2026 Pemerintah Desa Bunutwetan.</p>
-          <p class="footer-text text-primary fw-semibold">Kecamatan Pakis, Kabupaten Malang</p>
-        </div>
-
       </div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    document.getElementById("inputNIK").addEventListener("input", function() {
-      // Hanya izinkan angka saja saat diketik
-      this.value = this.value.replace(/[^0-9]/g, '');
-    });
-
-    document.getElementById("formLacak").addEventListener("submit", function(e) {
-      e.preventDefault();
-      
-      const nik = document.getElementById("inputNIK").value;
-      const errorMsg = document.getElementById("errorMsg");
-      
-      // Validasi panjang digit NIK
-      if (nik.length !== 16) {
-        errorMsg.classList.remove("d-none");
-        return;
-      }
-      
-      errorMsg.classList.add("d-none");
-      
-      // LINK UTAMA WEB APP GOOGLE APPS SCRIPT MAS TRI
-      // Parameter NIK otomatis ditempelkan di belakang url pelacakan warga
-      const baseUrl = "https://script.google.com/macros/s/AKfycbxlIT3tpc_lca_uiDjR2r0_M8RqdEPeqoK3Lba2pXdstDDxDqsJj0-WqJwR0RkotSDF/exec";
-      const targetUrl = baseUrl + "?nik=" + encodeURIComponent(nik);
-      
-      // Alihkan halaman langsung ke server Google Apps Script
-      window.location.href = targetUrl;
-    });
-  </script>
 </body>
 </html>
